@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>form number validation</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="js/jquery-.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-dark bg-info">
+	<a href="" class="navbar-brand">personal form validation</a>
+</nav>
+	<br>
+	<br>
+	<div class="container d-flex justify-content-center ">
+		<div class="form jumbotron  " style="width:450px ;">
+		<h3 class="text-center">personal form 	</h3>
+			<form class="form-group" onsubmit="return fun();">
+			 <div class="form-group">
+			 	<label><b>name</b></label>
+			 	<input type="text" class="form-control" id="name"  placeholder="enter name">
+			 </div>
+			 
+			 <div class="form-group">
+			 	<label><b>address</b></label>
+			 	<input type="text" class="form-control" id="address" 
+			 	placeholder="enter address">
+			 	
+			 </div>
+			
+			 <div class="form-group">
+			 	<label><b>email</b></label>
+			 	<input type="email" class="form-control" id="email" placeholder="enter email address">
+			 </div>
+			
+				<div class="form-group">
+				<label><b>contact number</b></label>
+				<input onkeyup="filter();" type="text" class="form-control" id="number"
+				placeholder="enter contact number">
+				<span id="numbererror"></span>
+				</div>
+				
+				<div class="form-group input-check ">
+					<label><b>select course</b> </label><br>
+					<input type="checkbox" name="check" value="php">php
+					<input type="checkbox" name="check" value="java"> java
+					<input type="checkbox" name="check" value=".net">.net
+				</div>
+				
+				
+				<div class="form-group">
+						<input type="submit" value="submit" class="btn btn-primary">
+						<input type="reset" value="cancel" class="btn btn-danger ml-5">
+				</div>
+				
+			
+			
+			</form>
+			
+		</div>
+			
+			<script>
+				
+			
+				function filter()
+				{
+				  	var value = document.getElementById("number").value;
+					  if(isNaN(value))
+						{
+							alert('only number accept');
+						}	 
+					
+				}
+			
+			 function fun()
+				{
+				var user = document.getElementById("name").value;
+				var address = document.getElementById("address").value;
+				var email = document.getElementById("email").value;
+
+				
+					var value = document.getElementById("number").value;
+					
+				 if((user=="")&&(address=="")&&(email==""))
+					 {
+						  alert('all filed required');
+					 }
+					
+					if(value=="")
+						{
+							document.getElementById("numbererror").innerHTML="empty this filed";
+							return false;
+						}
+					
+				
+					 if(isNaN(value))
+						 {
+							 document.getElementById("numbererror").innerHTML="only number allow"
+							;
+							 return false;
+						 }
+					
+					
+				}
+			</script>
+		</div>
+	</div>
+	  
+	
+	<script src="js/jquery-.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
